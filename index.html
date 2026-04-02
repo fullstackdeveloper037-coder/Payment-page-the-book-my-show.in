@@ -1,149 +1,78 @@
 
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IPL Ticket Booking</title><style>
-body {
-    font-family: Arial;
-    margin:0;
-    background:#f2f2f2;
+<title>Payment Page</title>
+
+<style>
+
+
+/* Button */
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  background: #e31c23;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* HEADER */
-.header {
-    background:#e11d2e;
-    color:white;
-    padding:20px;
-    border-bottom-left-radius:20px;
-    border-bottom-right-radius:20px;
+button:active {
+  transform: scale(0.97);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edge to Edge Image</title>
+</head>
+<body style="margin:0; padding:0;">
+
+  <img src="https://i.ibb.co/Vct6n5W5/1000000193-1.jpg"
+       alt="Edge to Edge Image"
+       style="display:block; width:100%; height:auto;">
+
+  <img src="https://i.ibb.co/3mMGwf3F/1000000200.jpg"
+       alt="Edge to Edge Image"
+       style="display:block; width:100%; height:auto;">
+
+
+  <img src="https://i.ibb.co/SXWBtyJK/1000000200-1.jpg"
+       alt="Edge to Edge Image"
+       style="display:block; width:100%; height:auto;">
+</body>
+</html>
+
+
+
+     
+  <!-- Button -->
+  <button onclick="paymentDone()">I've Made Payment →</button>
+
+</div>
+
+<script>
+function goBack() {
+  alert("Going back...");
 }
 
-.header h2 { margin:5px 0; }
-
-/* SECTION */
-.section {
-    padding:15px;
+function paymentDone() {
+  alert("Payment Submitted! Our team will verify and send your ticket.");
 }
+</script>
 
-.title {
-    font-weight:bold;
-    margin:15px 0;
-    color:#555;
-}
-
-/* CARD */
-.card {
-    background:white;
-    border-radius:15px;
-    padding:15px;
-    margin-bottom:15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
-
-.left {
-    border-left:5px solid green;
-    padding-left:10px;
-}
-
-.premium { border-left-color:orange; }
-.vip { border-left-color:red; }
-
-.price {
-    color:#e11d2e;
-    font-weight:bold;
-    font-size:18px;
-}
-
-.btn {
-    background:#e11d2e;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    border-radius:20px;
-    cursor:pointer;
-}
-
-/* POPUP */
-.popup {
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    background:white;
-    padding:20px;
-    border-top-left-radius:20px;
-    border-top-right-radius:20px;
-    display:none;
-}
-
-.popup input {
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-}
-</style></head><body><div class="header">
-    <h3>Kolkata Knight Riders vs Sunrisers Hyderabad</h3>
-    <p>📅 2 April 2026 | ⏰ 7:30 PM</p>
-    <p>📍 Eden Gardens, Kolkata</p>
-</div><div class="section"><div class="title">LOWER STANDS</div><div class="card">
-    <div class="left">
-        <b>Block B/C/D</b><br>
-        <span class="price">₹750 - ₹1200</span>
-    </div>
-    <button class="btn" onclick="buy('Block B/C/D')">Buy</button>
-</div><div class="card">
-    <div class="left">
-        <b>High Court End</b><br>
-        <span class="price">₹1200 - ₹1850</span>
-    </div>
-    <button class="btn" onclick="buy('High Court End')">Buy</button>
-</div><div class="title">PREMIUM</div><div class="card">
-    <div class="left premium">
-        <b>Club House</b><br>
-        <span class="price">₹2400 - ₹3500</span>
-    </div>
-    <button class="btn" onclick="buy('Club House')">Buy</button>
-</div><div class="card">
-    <div class="left premium">
-        <b>Pavilion Gallery</b><br>
-        <span class="price">₹3500 - ₹4800</span>
-    </div>
-    <button class="btn" onclick="buy('Pavilion Gallery')">Buy</button>
-</div><div class="title">VIP</div><div class="card">
-    <div class="left vip">
-        <b>VIP Box</b><br>
-        <span class="price">₹6000 - ₹7500</span>
-    </div>
-    <button class="btn" onclick="buy('VIP Box')">Buy</button>
-</div></div><!-- POPUP --><div id="popup" class="popup">
-    <h3 id="seatName"></h3>
-    <input id="name" placeholder="Your Name">
-    <input id="qty" type="number" placeholder="Tickets">
-    <button class="btn" onclick="confirmBooking()">Confirm</button>
-</div><script>
-let selectedSeat = "";
-
-function buy(seat) {
-    selectedSeat = seat;
-    document.getElementById("seatName").innerText = "Booking: " + seat;
-    document.getElementById("popup").style.display = "block";
-}
-
-function confirmBooking() {
-    const name = document.getElementById("name").value;
-    const qty = document.getElementById("qty").value;
-
-    if (!name || !qty) {
-        alert("Fill details");
-        return;
-    }
-
-    alert("Booked " + qty + " tickets for " + selectedSeat);
-    document.getElementById("popup").style.display = "none";
-}
-</script></body>
+</body>
 </html>
